@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PT Satu Teknologi Cipta (SATCI) - Casing HP custom berkualitas, inovatif, dan terpercaya." />
+  <title>SATCI — Costume your case with your style</title>
+  <link rel="icon" type="image/svg+xml" href="Logo Ecommers Satci.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#beranda" class="brand">
+        <img src="Logo Ecommers Satci.svg" alt="Logo SATCI" class="brand-mark" />
+        <span class="brand-text">SATCI<small>Satu Teknologi Cipta</small></span>
+      </a>
+      <input type="checkbox" id="navToggleCheck" class="nav-toggle-check" hidden />
+      <label for="navToggleCheck" class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="nav-links" id="navLinks">
+        <a href="#beranda">BERANDA</a>
+        <a href="#katalog">KATALOG PRODUK</a>
+        <a href="#visi-misi">VISI &amp; MISI</a>
+        <a href="#layanan">LAYANAN</a>
+        <a href="#struktur">STRUKTUR</a>
+        <a href="#mitra">MITRA</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / BERANDA -->
+  <section class="hero hero-center" id="beranda">
+    <div class="hero-bg"></div>
+    <div class="container hero-center-inner">
+      <img src="logosatcifontputihremovebg.png" alt="Logo SATCI" class="hero-logo" />
+      <h1 class="hero-slogan">
+        &ldquo;Costume your case<br />
+        <span class="gradient-text">with your style&rdquo;</span>
+      </h1>
+      <a href="#tentang" class="hero-scroll" aria-label="Scroll ke bawah">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- TENTANG KAMI -->
+  <section class="tentang" id="tentang">
+    <div class="container tentang-inner">
+      <span class="eyebrow eyebrow-plain">TENTANG KAMI</span>
+      <h2 class="tentang-title">PT. Satu Teknologi Cipta</h2>
+      <p class="tentang-desc">
+        SATCI adalah perusahaan teknologi yang berfokus pada industri aksesoris smartphone,
+        khususnya casing HP custom. Kami menggabungkan kreativitas desain dengan teknologi
+        cetak berkualitas tinggi untuk menghadirkan produk yang personal dan unik bagi
+        setiap pelanggan melalui platform e-commerce yang modern dan mudah digunakan.
+      </p>
+    </div>
+  </section>
+
+  <!-- KATALOG / CUSTOMIZER -->
+  <section class="katalog" id="katalog">
+    <div class="container">
+      <div class="katalog-head">
+        <span class="eyebrow eyebrow-plain">CUSTOMIZE &amp; ORDER</span>
+        <h2 class="katalog-title">Desain Casing Kamu</h2>
+        <p class="katalog-desc">
+          Pilih merek HP, tipe, jenis case, unggah desain kamu,
+          lalu klik checkout untuk kirim pesanan ke WhatsApp admin SATCI.
+        </p>
+      </div>
+
+      <div class="customizer">
+        <!-- LEFT: FORM -->
+        <div class="cz-form">
+          <div class="cz-step">
+            <div class="cz-step-head"><span>1</span><h4>Pilih Merek HP</h4></div>
+            <div class="cz-options" data-role="merek" id="czMerek">
+              <span class="cz-loading">Memuat merek...</span>
+            </div>
+          </div>
+
+          <div class="cz-step">
+            <div class="cz-step-head"><span>2</span><h4>Pilih Tipe HP</h4></div>
+            <select class="cz-select" id="czTipe" aria-label="Tipe HP"></select>
+          </div>
+
+          <div class="cz-step">
+            <div class="cz-step-head"><span>3</span><h4>Jenis Case</h4></div>
+            <select class="cz-select" id="czBahan" aria-label="Jenis Case"></select>
+          </div>
+
+          <div class="cz-step">
+            <div class="cz-step-head"><span>4</span><h4>Desain Casing</h4></div>
+            <div class="cz-design">
+              <label class="cz-upload">
+                <input type="file" id="czUpload" accept="image/*" hidden />
+                <span class="cz-upload-ico">⬆️</span>
+                <span class="cz-upload-text">
+                  <strong>Upload desain</strong>
+                  <small>JPG/PNG — maks 5MB</small>
+                </span>
+                <span class="cz-upload-btn" id="czUploadBtn">Pilih File</span>
+              </label>
+              <button type="button" class="cz-remove" id="czRemove" hidden>✕ Hapus desain yang diupload</button>
+            </div>
+          </div>
+
+          <div class="cz-step">
+            <div class="cz-step-head"><span>5</span><h4>Data Pemesan</h4></div>
+            <div class="cz-pemesan">
+              <label class="cz-text-label">
+                <span>Nama</span>
+                <input type="text" id="czNama" placeholder="Nama lengkap" />
+              </label>
+              <label class="cz-text-label">
+                <span>Jumlah</span>
+                <input type="number" id="czQty" min="1" max="99" value="1" />
+              </label>
+            </div>
+            <label class="cz-text-label">
+              <span>Catatan Penjual (opsional)</span>
+              <textarea id="czNote" rows="3" placeholder="Contoh: tolong dicetak dengan warna tajam, kirim ke Jakarta, dll..."></textarea>
+            </label>
+          </div>
+        </div>
+
+        <!-- RIGHT: PREVIEW -->
+        <aside class="cz-preview">
+          <div class="cz-preview-sticky">
+            <div class="cz-summary">
+              <h5>Ringkasan Pesanan</h5>
+              <ul>
+                <li><span>Merek</span><strong id="sumMerek">-</strong></li>
+                <li><span>Tipe HP</span><strong id="sumTipe">-</strong></li>
+                <li><span>Jenis Case</span><strong id="sumBahan">-</strong></li>
+                <li><span>Desain</span><strong id="sumDesain">Polos</strong></li>
+                <li><span>Jumlah</span><strong id="sumQty">1 pcs</strong></li>
+              </ul>
+              <div class="cz-total">
+                <span>Total</span>
+                <strong id="sumTotal">Rp 0</strong>
+              </div>
+              <a href="#" class="cz-checkout" id="czCheckout" target="_blank" rel="noopener">
+                <span class="wa-icon" aria-hidden="true"></span>
+                Checkout via WhatsApp
+              </a>
+              <p class="cz-note">
+                Dengan klik checkout, kamu akan diarahkan ke WhatsApp admin SATCI.
+                <strong>Jika upload desain, mohon lampirkan ulang gambarnya di chat WA.</strong>
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISI & MISI -->
+  <section class="visi-misi" id="visi-misi">
+    <div class="container">
+      <div class="vm-grid">
+        <div class="vm-left">
+          <span class="eyebrow">VISI PERUSAHAAN</span>
+          <h2>Menjadi <span class="gradient-text">E-commerce Casing HP</span> Terkemuka di Indonesia.</h2>
+          <p>
+            Menjadi perusahaan e-commerce terkemuka di Indonesia dalam penjualan casing HP
+            yang inovatif, berkualitas, dan terpercaya.
+          </p>
+        </div>
+        <div class="vm-right">
+          <span class="eyebrow">MISI PERUSAHAAN</span>
+          <ol class="misi-list">
+            <li>
+              <span class="misi-num">01</span>
+              <div>
+                <h4>Inovasi Produk</h4>
+                <p>Mengembangkan inovasi produk melalui teknologi cetak dan material plastik berkualitas.</p>
+              </div>
+            </li>
+            <li>
+              <span class="misi-num">02</span>
+              <div>
+                <h4>Pelayanan Terbaik</h4>
+                <p>Memberikan pelayanan terbaik dan pengalaman belanja online yang mudah, cepat, dan aman.</p>
+              </div>
+            </li>
+            <li>
+              <span class="misi-num">03</span>
+              <div>
+                <h4>Desain Custom</h4>
+                <p>Menyediakan layanan desain custom yang kreatif dan sesuai kebutuhan pelanggan.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYANAN -->
+  <section class="layanan" id="layanan">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">LAYANAN UTAMA</span>
+        <h2>Layanan dan <span class="gradient-text">Keunggulan</span></h2>
+        <p class="section-sub">Berbagai layanan yang kami hadirkan untuk kebutuhan casing HP Anda.</p>
+      </div>
+      <div class="layanan-grid">
+        <article class="layanan-card">
+          <div class="layanan-icon">🎨</div>
+          <h3>Custom Design</h3>
+          <p>Desain casing sesuai keinginan Anda. Upload foto, pilih template, atau konsultasi dengan tim desainer kami.</p>
+        </article>
+        <article class="layanan-card">
+          <div class="layanan-icon">🖨️</div>
+          <h3>Print On Demand</h3>
+          <p>Teknologi cetak UV dan sublimasi berkualitas tinggi untuk hasil tajam, tahan lama, dan anti pudar.</p>
+        </article>
+        <article class="layanan-card">
+          <div class="layanan-icon">🛒</div>
+          <h3>Belanja Online</h3>
+          <p>Platform e-commerce yang mudah, cepat, dan aman. Kompatibel dengan berbagai metode pembayaran.</p>
+        </article>
+        <article class="layanan-card">
+          <div class="layanan-icon">🚚</div>
+          <h3>Pengiriman Cepat</h3>
+          <p>Kerja sama dengan kurir terpercaya. Gratis ongkir untuk pembelian minimum di wilayah terpilih.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUKTUR ORGANISASI -->
+  <section class="struktur" id="struktur">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">STRUKTUR ORGANISASI</span>
+        <h2>Tim <span class="gradient-text">Di Balik SATCI</span></h2>
+        <p class="section-sub">Profesional yang berdedikasi membangun pengalaman belanja casing HP terbaik.</p>
+      </div>
+
+      <div class="org-chart">
+        <div class="org-level">
+          <div class="org-card org-top">
+            <div class="org-avatar">DA</div>
+            <h4>CEO / Founder</h4>
+            <span>Dimas Andre Prasetya</span>
+          </div>
+        </div>
+        <div class="org-connector"></div>
+        <div class="org-level org-level-2">
+          <div class="org-card">
+            <div class="org-avatar">AC</div>
+            <h4>Head of Marketing &amp; Sales</h4>
+            <span>Azhar Cahya Sumantri</span>
+          </div>
+          <div class="org-card">
+            <div class="org-avatar">MI</div>
+            <h4>Head of Operations &amp; Logistics</h4>
+            <span>Muhamad Ibnu Rafli</span>
+          </div>
+        </div>
+        <div class="org-connector"></div>
+        <div class="org-level org-level-2">
+          <div class="org-card">
+            <div class="org-avatar">IR</div>
+            <h4>Product &amp; Design Manager</h4>
+            <span>Ilham Reza Pratama</span>
+          </div>
+          <div class="org-card">
+            <div class="org-avatar">FA</div>
+            <h4>Customer Service &amp; Support</h4>
+            <span>Fakhri Aqiilah</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MITRA -->
+  <section class="mitra" id="mitra">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">MITRA STRATEGIS</span>
+        <h2>Dipercaya oleh <span class="gradient-text">Mitra &amp; Kolaborator</span></h2>
+        <p class="section-sub">Berkolaborasi bersama brand dan marketplace ternama untuk menghadirkan casing HP terbaik bagi Anda.</p>
+      </div>
+
+      <div class="mitra-grid">
+        <div class="mitra-card">
+          <div class="mitra-logo">
+            <img src="jne-express.png" alt="Logo JNE Express" loading="lazy" />
+          </div>
+          <span>JNE Express</span>
+          <small>Pengiriman Nasional</small>
+        </div>
+
+        <div class="mitra-card">
+          <div class="mitra-logo">
+            <img src="jnt-express.png" alt="Logo J&amp;T Express" loading="lazy" />
+          </div>
+          <span>J&amp;T Express</span>
+          <small>Pengiriman Nasional</small>
+        </div>
+
+        <div class="mitra-card">
+          <div class="mitra-logo">
+            <img src="Gosend.png" alt="Logo GoSend" loading="lazy" />
+          </div>
+          <span>GoSend</span>
+          <small>Part of GoTo Group</small>
+        </div>
+
+        <div class="mitra-card">
+          <div class="mitra-logo">
+            <img src="QRIS.png" alt="Logo QRIS" loading="lazy" />
+          </div>
+          <span>QRIS</span>
+          <small>Pembayaran Digital</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand">
+          <img src="Logo Ecommers Satci.svg" alt="Logo SATCI" class="brand-mark" />
+          <span class="brand-text">SATCI<small>Satu Teknologi Cipta</small></span>
+        </div>
+        <p class="footer-tagline">
+          &ldquo;Menjadi platform e-commerce casing HP custom terdepan yang
+          menghadirkan kreativitas tanpa batas bagi setiap pengguna smartphone
+          di Indonesia.&rdquo;
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h6>Alamat Kantor</h6>
+        <address class="footer-address">
+          Jl. Letjen S. Parman No. 28,<br />
+          Tanjung Duren Selatan,<br />
+          Kec. Grogol Petamburan,<br />
+          Kota Jakarta Barat, DKI Jakarta 11470
+        </address>
+        <div class="footer-map">
+          <iframe
+            title="Peta Kantor SATCI"
+            src="https://www.google.com/maps?q=Jl.+Letjen+S.+Parman+No.28,+Tanjung+Duren+Selatan,+Grogol+Petamburan,+Jakarta+Barat&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6>Kontak</h6>
+        <a class="footer-contact" href="mailto:hello@satci.co.id">
+          <span class="footer-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </span>
+          hello@satci.co.id
+        </a>
+        <a class="footer-contact" href="tel:+6281111111111">
+          <span class="footer-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          0811 1111 1111
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h6>Social Media</h6>
+        <a class="footer-social" href="#" target="_blank" rel="noopener">
+          <span class="footer-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </span>
+          satcisutomcase
+        </a>
+        <a class="footer-social" href="#" target="_blank" rel="noopener">
+          <span class="footer-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.6 6.7a5.4 5.4 0 0 1-3.3-1.8 5.4 5.4 0 0 1-1.2-3.4h-3.3v13a3 3 0 1 1-3-3c.3 0 .6 0 .9.1V8.3a6.3 6.3 0 0 0-1-.1 6.3 6.3 0 1 0 6.3 6.3V9.3a8.7 8.7 0 0 0 4.6 1.3V7.3a5.4 5.4 0 0 1-0 -0z"/></svg>
+          </span>
+          satcisutomcase
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© <span id="year"></span> PT Satu Teknologi Cipta (SATCI). All rights reserved.</span>
+        <span class="tag">Costume your case with your style.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#beranda" class="to-top" id="toTop" aria-label="Back to top">↑</a>
+
+  <script src="app.js"></script>
+</body>
+</html>
