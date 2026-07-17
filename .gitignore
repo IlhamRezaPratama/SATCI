@@ -1,0 +1,17 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build / Deploy
+.vercel/
+node_modules/
+
+# Temp / Backup
+*.bak
+*.tmp
+~$*
+
+# Aset bantu yang tidak dipakai produksi (hapus baris kalau ingin di-deploy)
+ChatGPT Image*.png
