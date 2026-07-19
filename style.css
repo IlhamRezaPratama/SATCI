@@ -851,7 +851,7 @@ section { padding: 6rem 0; position: relative; }
 
 .org-kompeten li {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.9rem; /* Diperbesar dari 0.75rem */
   line-height: 1.5;
   color: var(--ink-muted);
   padding-left: 1.4rem;
@@ -865,7 +865,7 @@ section { padding: 6rem 0; position: relative; }
   top: 0;
   font-weight: 700;
   color: var(--blue-500, #3b82f6);
-  font-size: 0.8rem;
+  font-size: 1rem; /* Ikon juga diperbesar */
 }
 
 .org-kompeten li strong {
@@ -878,7 +878,7 @@ section { padding: 6rem 0; position: relative; }
 }
 
 .org-card.org-top .org-kompeten li {
-  font-size: 0.82rem;
+  font-size: 0.95rem; /* Diperbesar dari 0.82rem */
 }
 
 .org-card.org-top .org-desc-title {
